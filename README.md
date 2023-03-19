@@ -26,7 +26,7 @@ The original version was modified for significantly more efficient and buffered 
 and for an option to configure for higher radio transmission data rates (2 Mbps).
 This allows for much higher throughput like low latency video streaming with 400 kbps.
 
-Adaptions have been made to use it with Xiao ESP32C3 modules, which are extremely small
+Adaptions have been made to use it with the tiny XIAO ESP32C3 modules, which are extremely small
 and lightweight and have a connector for external antennas.
 <img src="https://live.staticflickr.com/65535/52613792130_c31a772c7c_b.jpg">
 
