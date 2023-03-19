@@ -16,6 +16,7 @@ When uploading the sketch, be sure to define `BOARD1` or `BOARD2` for the OPPONE
 as appropriate before compiling.
 
 -- Yuri - Sep 2021
+
 -- hhackbarth - March 2023
 
 Based this example - https://randomnerdtutorials.com/esp-now-two-way-communication-esp32/
@@ -41,7 +42,7 @@ with 2 Mbps and also with lower data rates (like 250 kbps)
 
 ## Further use cases
 
-As mentioned before, the serial bridge also was successfully tested with video
+As mentioned before, the serial bridge also was successfully tested with UDP video
 streams at bitrates up to 400 kbps. In order to convert between UDP traffic and serial
 there are several options available like "socat" tool or a pppd (daemon for PPP protocol layer).
 
