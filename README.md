@@ -1,6 +1,6 @@
 # ESP-Now-Serial-Bridge (optimized version)
 
-ESP32 based serial bridge for transmitting high bitrate serial data between two boards.
+ESP32 based serial bridge for transmitting high bitrate serial data between two boards over long ranges.
 
 Optimized version based on https://github.com/yuri-rage/ESP-Now-Serial-Bridge
 
@@ -26,7 +26,7 @@ The original version was modified for significantly more efficient and buffered 
 and for an option to configure for higher radio transmission data rates (2 Mbps).
 This allows for much higher throughput like low latency video streaming with 400 kbps.
 
-Adaptions have been made tu use it with Xiao ESP32C3 modules, which are extremely small
+Adaptions have been made to use it with Xiao ESP32C3 modules, which are extremely small
 and lightweight and have a connector for external antennas.
 <img src="https://live.staticflickr.com/65535/52613792130_c31a772c7c_b.jpg">
 
@@ -34,7 +34,7 @@ At the moment, the serial initialization is modified in order to communicate thr
 
 By default, ESP NOW works with 1 Mbps data rate.
 The option to increase radio transmission data rate to 2 Mbps is experimental.
-It is compiling correctly and modules work with these modifications but it could
+It is compiling correctly and modules run with these modifications but it could
 not yet be proved that the data rate and bandwidth is really doubled.
 I encourage others make further performance tests for changes in throughput and range
 with 2 Mbps and also with lower data rates (like 250 kbps)
