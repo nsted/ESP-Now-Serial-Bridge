@@ -1,11 +1,12 @@
 # ESP-Now-Serial-Bridge (optimized version)
 
-ESP32 based serial bridge for transmitting serial data between two boards
+ESP32 based serial bridge for transmitting high bitrate serial data between two boards.
 
 Optimized version based on https://github.com/yuri-rage/ESP-Now-Serial-Bridge
 
 Tested with baud rate 921600 and video streaming bitrates of up to 400 kbps.
 The primary purpose of this sketch was to enable a MAVLink serial connection.
+There is no error correction or acknowledgement mechanism. If you require this, it has to be implemented on a higher protocol layer. MAVLink already provides its own mechanisms.
 
 Range is easily better than regular WiFi, however an external antenna may be required for truly long range messaging, to combat obstacles/walls, and/or to achieve success in an area saturated with 2.4GHz traffic.
 
