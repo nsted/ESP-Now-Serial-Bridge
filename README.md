@@ -23,7 +23,7 @@ Based this example - https://randomnerdtutorials.com/esp-now-two-way-communicati
 
 ## Modifications/Optimizations
 
-The original version was modified for significantly more efficient and buffered Serial.read()
+The original version was modified for significantly more efficient and buffered serial communication
 and for an option to configure for higher radio transmission data rates (2 Mbps).
 This allows for much higher throughput like low latency video streaming with 400 kbps.
 
