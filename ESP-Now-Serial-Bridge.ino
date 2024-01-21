@@ -56,7 +56,7 @@
 #include <esp_wifi.h>
 #include <HardwareSerial.h>
 
-#define BOARD2 // BOARD1 or BOARD2 acting as OPPONENT!
+#define BOARD1 // BOARD1 or BOARD2 acting as OPPONENT!
 //#define USE_LED // enables LED usage
 //#define USE_2_MBPS // reconfigure data rate to 2 Mbps - not yet thoroughly tested!
 //#define SUPPRESS_ESP_RESET_MSG // Suppress the ESP-ROM: ... Message on receiver side that occurs via USB CDC after new connection
@@ -69,9 +69,9 @@
 #endif
 
 #ifdef BOARD1
-#define RECVR_MAC {0xA0, 0x76, 0x4E, 0x3F, 0xB0, 0x88}  // replace with your board's address
+#define RECVR_MAC {0xD4, 0xF9, 0x8D, 0x05, 0xAA, 0xD0}  // replace with your board's address
 #else
-#define RECVR_MAC {0xA0, 0x76, 0x4E, 0x44, 0xA7, 0x84}  // replace with your board's address
+#define RECVR_MAC {0xD4, 0xF9, 0x8D, 0x03, 0xD0, 0xB4}  // replace with your board's address
 #endif
 
 #define WIFI_CHAN  9 // 12-13 only legal in US in lower power mode, do not use 14
@@ -79,10 +79,10 @@
 #define TX_PIN     0 // default UART0 on Xiao ESP32C3 is pin D6 (21), 0 means: do not set pin
 #define RX_PIN     0 // default UART0 on Xiao ESP32C3 is pin D7 (20), 0 means: do not set pin
 #define SER_PARAMS SERIAL_8N1 // SERIAL_8N1: start/stop bits, no parity
-//HardwareSerial SerialIO(0); // used for incoming/outgoing communication
+//HardwareSerial SerialIO(0); // used for incoming/outgoing communication, uncomment, when using GPIO pins instead of USB
 HardwareSerial SerialMON(0); // Used for USB serial on Xiao ESP32C3, check docs for your board
 //#define SerialMON Serial // Use SerialMON as placeholder for USB serial
-#define SerialIO Serial // Use SerialIO as placeholder for USB serial
+#define SerialIO Serial // Use SerialIO as placeholder for USB serial, comment out, when using GPIO pins instead of USB
 
 #ifndef ESP_NOW_MAX_DATA_LEN
 #define ESP_NOW_MAX_DATA_LEN 250 // ESP-NOW can transmit max of 250 bytes

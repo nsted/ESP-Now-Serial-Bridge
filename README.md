@@ -10,7 +10,23 @@ There is no error correction or acknowledgement mechanism. If you require this, 
 
 Range is easily better than regular WiFi, however an external antenna may be required for truly long range messaging, to combat obstacles/walls, and/or to achieve success in an area saturated with 2.4GHz traffic.
 
-To find the MAC address of each board, uncomment the `#define DEBUG` line, and monitor serial output on boot.  Set the OPPOSITE board's IP address as the value for RECVR_MAC in the macros at the top of the sketch.
+To find the MAC address of each board, uncomment the `#define DEBUG` line, and monitor serial output on boot. 
+Alternatively, you can upload the following code:
+```
+#include "WiFi.h"
+ 
+void setup(){
+  Serial.begin(115200);
+  WiFi.mode(WIFI_MODE_STA);
+  Serial.println(WiFi.macAddress());
+}
+ 
+void loop(){
+
+}
+```
+
+Set the OPPOSITE board's IP address as the value for RECVR_MAC in the macros at the top of the sketch.
 
 When uploading the sketch, be sure to define `BOARD1` or `BOARD2` for the OPPONENT board
 as appropriate before compiling.
@@ -31,7 +47,10 @@ Adaptions have been made to use it with the tiny XIAO ESP32C3 modules, which are
 and lightweight and have a connector for external antennas.
 <img src="https://live.staticflickr.com/65535/52613792130_c31a772c7c_b.jpg">
 
-At the moment, the serial initialization is modified in order to communicate through the USB Serial interface.
+At the moment, the serial initialization is modified in order to communicate through the USB Serial interface. If you want to use hardware serial GPIO TX and RX pins instead (e.g. D6 and D7 on Xiao ESP32C3), then you must change the #define statements for TX_PIN and RX_PIN from 0 to the given values. Furthermore, you have uncomment the line (currently line 82) starting with:
+`//HardwareSerial SerialIO(0);` to `HardwareSerial SerialIO(0);`
+and you have to comment out the line (currently line 85) starting with:
+`#define SerialIO Serial` to `//#define SerialIO Serial`
 
 By default, ESP NOW works with 1 Mbps data rate.
 The option to increase radio transmission data rate to 2 Mbps is experimental.
