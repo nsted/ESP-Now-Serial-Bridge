@@ -4,6 +4,10 @@ ESP32 based serial bridge for transmitting high bitrate serial data between two 
 
 Optimized version based on https://github.com/yuri-rage/ESP-Now-Serial-Bridge
 
+*** Update Notice: This code is based on Espressif ESP NOW IDF v4 libraries. Version 5 of these libraries have breaking changes in the API. ***
+*** If you are using Arduino IDE, you need ESP32 2.0.x board manager libraries. With 3.0.x you will get error messages at compilation ***
+*** I did not yet find the time to update the code match newer API, perhaps you can help out here... ***
+
 Tested with baud rate 921600 and video streaming bitrates of up to 400 kbps.
 The primary purpose of this sketch was to enable a MAVLink serial connection.
 There is no error correction or acknowledgement mechanism. If you require this, it has to be implemented on a higher protocol layer. MAVLink already provides its own mechanisms.
